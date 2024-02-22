@@ -11,3 +11,4 @@ Warmups.Run();
 Exercise1.Run();
 Exercise2.Run();
 Exercise3.Run();
+Exercise5.Run();
