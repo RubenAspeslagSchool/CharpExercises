@@ -4,25 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace CsharpAfterJava.Exercise1
 {
-    public class FactorialB
+    public class FactorialD(int value)
     {
-        private int _value;
-        private int _result;
-
-
-        public int Value { get; init;}
-
-        public int Result { get => Calculate(); }
-
-        
-
         public int Calculate()
         {
             int factorial = 1;
 
-            for (int i = 1; i <= Value; i++)
+            for (int i = 1; i <= value; i++)
             {
                 factorial *= i;
             }

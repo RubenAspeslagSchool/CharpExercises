@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace CsharpAfterJava.Exercise1
 {
-    public class FactorialA
+    public class FactorialB
     {
-        public int Value { get; set; }
+        private int _value;
+        private int _result;
 
-        public FactorialA(int value)
-        {
-                Value = value;  
-        }
+
+        public int Value { get; init; }
+
+        public int Result { get => Calculate(); }
+
+
 
         public int Calculate()
         {
@@ -26,18 +29,5 @@ namespace ConsoleApp1
 
             return factorial;
         }
-
-public int CalculateJB()
-{
-    int factorial = Value;
-
-    for (int i = Value - 1; i >= 1; i--)
-    {
-        factorial *= i;
-    }
-
-    return factorial;
-}
-
     }
 }
