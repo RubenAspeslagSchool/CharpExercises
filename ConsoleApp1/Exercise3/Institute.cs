@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CsharpAfterJava.Exercise3
 {
-    internal class Institute
+    public class Institute
     {
         public string Name { get; set; }
         public List<StudentGroup> Groups { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CsharpAfterJava.Exercise3
 {
-    internal class StudentGroup
+    public class StudentGroup
     {
         public string Name { get; set; }
         public Lecturer Principal { get; set; }
@@ -14,11 +14,11 @@ namespace CsharpAfterJava.Exercise3
 
         public override string ToString() 
         {
-            string group = $"group:    principal: {Principal.ToString()}";
+            string group = $"group {Name}:     principal: {Principal.ToString()}";
             
             Students.ForEach(student =>
             {
-                group = $"{group} {Name}:    {student.ToString()}";
+                group = $" {group} :    {student.ToString()}";
             });
             return group;
         }

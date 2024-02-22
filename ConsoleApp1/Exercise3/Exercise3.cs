@@ -25,7 +25,7 @@ namespace CsharpAfterJava.Exercise3
     //Test your ToString() method for each class by printing sending output to
     //Console.WriteLine() .
     //Implement a class Institute that can contain multiple groups.
-    internal class Exercise3
+    public class Exercise3
     {
         public static void Run() 
         {

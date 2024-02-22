@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace CsharpAfterJava.Exercise3
 {
-    internal class Student
+    public class Student : Person
     {
         public int Number { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
 
         public override string ToString()
         {
-            return $"Student:   {Number}  {FirstName}   {LastName};   ";
+            return $"Student:   {Number}  {base.ToString()};   ";
         }
     }
 }

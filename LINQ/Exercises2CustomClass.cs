@@ -19,10 +19,7 @@ namespace LINQ
 
             //1- students where the first and last name start with the same character
             Console.WriteLine("1- students where the first and last name start with the same character");
-            StudentsWhereFirstAndLastNameStartWithSameCharacter().ForEach(student =>
-            {
-                Console.WriteLine(student.ToString);
-            });
+            StudentsWhereFirstAndLastNameStartWithSameCharacter().ForEach(student => Console.WriteLine(student.ToString));
 
             Console.WriteLine($"2- the average age of female students {avgFemale()}" );
             Console.WriteLine($"3- The student with the highest score is {largestCode().ToString()}, and its code is {computeCode(largestCode())}");
