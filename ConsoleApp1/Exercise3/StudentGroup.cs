@@ -8,7 +8,19 @@ namespace CsharpAfterJava.Exercise3
 {
     internal class StudentGroup
     {
+        public string Name { get; set; }
         public Lecturer Principal { get; set; }
         public List<Student> Students { get; set; }
+
+        public override string ToString() 
+        {
+            string group = $"group:    principal: {Principal.ToString()}";
+            
+            Students.ForEach(student =>
+            {
+                group = $"{group} {Name}:    {student.ToString()}";
+            });
+            return group;
+        }
     }
 }
