@@ -8,8 +8,10 @@ namespace CsharpAfterJava.Exercise1
 {
     internal class Exercise1
     {
-        public static void Run() 
+        public static void Run()
         {
+            Console.WriteLine("---------------------------- Exercise 1 ----------------------------");
+
 
             // 1A
             Console.WriteLine("---------------- 1A -------------");
