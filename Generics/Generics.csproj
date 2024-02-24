@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\CsharpAfterJava.csproj" />
-  </ItemGroup>
-	
-	
-
 </Project>
