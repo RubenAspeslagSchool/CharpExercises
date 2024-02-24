@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace UnitTest.AdvancedTopic
 {
     
-    public class Exercise5
+    public class Exercise5AReverse
     {
         private string _input = "12345";
         private string _ExpectedOutput = "54321";
@@ -17,7 +17,7 @@ namespace UnitTest.AdvancedTopic
         {
             //Arrange
             //Act
-            string output = _input.Reverse().ConvertToString();
+            string output = _input.Reverse(true).ConvertToString();
             //assert
             Assert.Equal(_ExpectedOutput, output);
             
