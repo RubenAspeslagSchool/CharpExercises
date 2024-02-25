@@ -28,5 +28,18 @@ namespace AdvancedTopics
         {
             return !(x % 2 == 0);
         }
+
+        public static int CountChar(this String text, char c)
+        {
+            int count = 0;
+            for(int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == c)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
     }
 }
