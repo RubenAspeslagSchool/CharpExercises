@@ -29,27 +29,34 @@ namespace AdvancedTopics
 
     public class Exercise6KeyValuePairList<T, X>
 	{
-        private Dictionary<T, X> _dict = new Dictionary<T, X>();
+        //private Dictionary<T, X> _dict = new Dictionary<T, X>();
         public int Count
 		{
-			get { return _dict.Count; }
+			get { return Keys.Count; }
 
 		}
-		public List<T> Keys
-		{
-			get { return _dict.Keys.ToList(); }
-		}
-		public List<X> Values
-		{
-			get { return _dict.Values.ToList(); }
-		}
+		public List<T> Keys{ get;} = new List<T>();
+		public List<X> Values{ get;} = new List<X>();
 
 
         // I use _dict (private field) in methods even if it's a bad practice, because IDK if there is an alternative in this case
         // Is there a better way to solve this?
-		public void Add(T key, X value) { _dict.Add(key, value); }
-		public void Clear() { _dict.Clear(); }
-		public void Remove(T key) { _dict.Remove(key);}
+		public void Add(T key, X value) 
+        {
+         Keys.Add(key);
+         Values.Add(value);   
+        }
+		public void Clear() 
+        {
+            Keys.Clear(); 
+            Values.Clear();
+        }
+		public void Remove(T key) 
+        {
+            int index = Keys.IndexOf(key);
+            Keys.RemoveAt(index);
+            Keys.Remove(key);
+        }
 
     }
 }
