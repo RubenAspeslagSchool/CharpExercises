@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -43,8 +44,9 @@ namespace AdvancedTopics
 			get { return _dict.Values.ToList(); }
 		}
 
-		
 
+        // I use _dict (private field) in methods even if it's a bad practice, because IDK if there is an alternative in this case
+        // Is there a better way to solve this?
 		public void Add(T key, X value) { _dict.Add(key, value); }
 		public void Clear() { _dict.Clear(); }
 		public void Remove(T key) { _dict.Remove(key);}
