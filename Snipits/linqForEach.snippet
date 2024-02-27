@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+                <Title>linqForEach</Title>
+                <Author>Ruben Aspeslag</Author>
+                <Description>linq for each</Description>
+                <Shortcut>linqForEach</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+               <![CDATA[ .ForEach($type$ $name$ => $action$)  ]]>
+            </Code>
+            <Declarations>
+               
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>type</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>name</ToolTip>
+                    <Default>text</Default>
+                </Literal>
+
+                <Literal>
+                    <ID>action</ID>
+                    <ToolTip>action</ToolTip>
+                    <Default>Console.WriteLine()</Default>
+                </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

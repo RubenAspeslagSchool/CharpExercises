@@ -29,7 +29,7 @@ namespace AdvancedTopics
 
     public class Exercise6KeyValuePairList<T, X>
 	{
-        //private Dictionary<T, X> _dict = new Dictionary<T, X>();
+        
         public int Count
 		{
 			get { return Keys.Count; }
@@ -39,8 +39,7 @@ namespace AdvancedTopics
 		public List<X> Values{ get;} = new List<X>();
 
 
-        // I use _dict (private field) in methods even if it's a bad practice, because IDK if there is an alternative in this case
-        // Is there a better way to solve this?
+     
 		public void Add(T key, X value) 
         {
          Keys.Add(key);

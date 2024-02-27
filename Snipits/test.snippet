@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+                <Title>Test</Title>
+                <Author>Ruben Aspeslag</Author>
+                <Description>unit test</Description>
+                <Shortcut>test</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+               <![CDATA[ 
+                [Fact]
+        public void $Result$_$What$_$Return$()
+        {
+            //Arrange
+            // Act
+            // Assert
+        }
+               ]]>
+            </Code>
+            <Declarations>
+               
+                <Literal>
+                    <ID>Result</ID>
+                    <ToolTip>Result</ToolTip>
+                    <Default>Result</Default>
+                </Literal>
+
+                <Literal>
+                    <ID>What</ID>
+                    <ToolTip>What</ToolTip>
+                    <Default>RactorialCountWithPropertyValue</Default>
+                </Literal>
+
+                <Literal>
+                    <ID>Return</ID>
+                    <ToolTip>Return</ToolTip>
+                    <Default>Return</Default>
+                </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

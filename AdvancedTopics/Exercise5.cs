@@ -32,9 +32,9 @@ namespace AdvancedTopics
         public static int CountChar(this String text, char c)
         {
             int count = 0;
-            for(int i = 0; i < text.Length; i++)
+            foreach (char ch in text) 
             {
-                if (text[i] == c)
+                if (ch == c)
                 {
                     count++;
                 }

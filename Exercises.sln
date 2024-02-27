@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtentionMethods", "Extenti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{9B3FF49A-BB0B-4F5B-B709-D2F2F6965134}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Snipits", "Snipits\Snipits.shproj", "{AAD7DA09-13D8-44B5-9A3C-2FDBB6F1CAE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,5 +53,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0266D55-C1EF-47BB-917E-E6633BA94282}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Snipits\Snipits.projitems*{aad7da09-13d8-44b5-9a3c-2fdbb6f1cae1}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
