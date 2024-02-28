@@ -27,7 +27,7 @@ namespace AdvancedTopics
 
 
 
-    public class Exercise6KeyValuePairList<T, X>
+    public class Exercise6KeyValuePairList<T, X> 
 	{
         
         public int Count
