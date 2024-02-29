@@ -49,17 +49,29 @@ namespace AdvancedTopics
             // and the name of the teacher starts with the letter P:
             // show the name of the group
 
-            Lecturer lecturer = new Lecturer();
-            if (lecturer is Person && lecturer.FirstName.StartsWith("P"))
-            {
-                
-            }
-
 
             // If there are any students in the group:
             // show the name of the group and the amount of students within that group
 
             // If there are more than 2 students in the group '2TI': show the name of the group and teacher
+
+            foreach (StudentGroup itemGroup in howest.Groups)
+            {
+                String result =  itemGroup switch
+                {
+                    StudentGroup studentGroup when studentGroup.Principal.FirstName.StartsWith("P") => itemGroup.Name,
+                    StudentGroup studentGroup when studentGroup.Students.Count > 2 && studentGroup.Name == "2TI" => $" {itemGroup.Name}  {itemGroup.Principal}",
+                    StudentGroup studentGroup when studentGroup.Students.Count > 0 => $"{studentGroup.Name}  {studentGroup.Students.Count}",
+                    _ => "deafauld"
+                };
+
+                Console.WriteLine(result);
+                
+            }
+
+
+
+           
         }
 
 
