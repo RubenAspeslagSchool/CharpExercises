@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-us//ing System.Drawing;
+//ing System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
