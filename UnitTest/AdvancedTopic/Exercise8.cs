@@ -21,8 +21,8 @@ namespace UnitTest.AdvancedTopic
                 new Desktop { Brand = "Asus", DeviceColor = Color.Transparant }
             };
             Computer[] pcs = computers.ToArray();
-            string[] pcs = { "een", "twee", "drie" }; //will not be accepted -> string is not type Computer
-            IList<Computer> pcs = computers.ToList();
+            string[] pcs2 = { "een", "twee", "drie" }; //will not be accepted -> string is not type Computer
+            IList<Computer> pcs2 = computers.ToList();
             IEnumerable<Laptop> laptops = new List<Laptop>()
             {
                 new Laptop { Brand = "Dell", DeviceColor = Color.Black },
@@ -31,8 +31,8 @@ namespace UnitTest.AdvancedTopic
             };
 
 
-            Laptop[] pcs2 = laptops.ToArray();
-            var (firstComputer, (secondComputer, (thirdComputer, _))) = pcs2;
+            Laptop[] pcs3 = laptops.ToArray();
+            var (firstComputer, (secondComputer, (thirdComputer, _))) = pcs3;
             //Arrange
             // Act
             // Assert
