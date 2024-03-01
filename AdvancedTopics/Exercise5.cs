@@ -8,15 +8,17 @@ namespace AdvancedTopics
 {
     public static class Exercise5
     {
-        public static IEnumerable<char> Reverse(this string text,bool keepspaces = true)
+        public static String Reverse(this string text,bool keepspaces = true)
         {
+            string resuld = "";
             for (int i = text.Length - 1; i >= 0; i--)
             {
                 if (!(keepspaces && text[i] == ' '))
                 {
-                    yield return text[i];
+                    resuld += text[i];
                 }
             }
+            return resuld;
         }
 
         public static string ConvertToString(this IEnumerable<char>text )

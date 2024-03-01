@@ -45,9 +45,9 @@ namespace AdvancedTopics
                 ? (false, $"{input} is a even number")
                 : (true, $"{input} is an odd number");
         }
-        private static (bool result, string statment) IsPalingdrome(string input)
+        private (bool result, string statment) IsPalingdrome(string input)
         {
-            return (input.Reverse().ToString() == input)
+            return (input.Reverse() == input)
                 ? (true, $"{input} is a palingdrome")
                 : (false, $"{input} is not a palingdrome");
 

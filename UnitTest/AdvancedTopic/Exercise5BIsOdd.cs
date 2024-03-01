@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UnitTest.AdvancedTopic
 {
-    public class Exercisee5BIsOdd
+    public class Exercise5BIsOdd
     {
         
         [Fact]
