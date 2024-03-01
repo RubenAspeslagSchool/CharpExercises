@@ -1,17 +1,21 @@
 ﻿using ClassLib.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace ClassLib
 {
     public class StudentRepository
     {
-        private IEnumerable<Student> _allStudents;
+        private List<Student> _allStudents;
 
 
         public StudentRepository() 
         {
-            _allStudents = new List<Student>();
-            _allStudents.Append(new Student {Id = 1, Name ="Mieke", Succeeded = true});
-            _allStudents.Append(new Student { Id = 2, Name = "Ruben", Succeeded = true });
+            _allStudents = new List<Student>()
+            {
+                new Student {Id = 0, Name ="Mieke", Succeeded = true},
+                new Student { Id = 1, Name = "Ruben", Succeeded = true }
+            };
+            
         }
         public IEnumerable<Student> GetAllStudents()
         {
@@ -21,6 +25,32 @@ namespace ClassLib
         public Student GetStudentById(int id)
         {
             return _allStudents.SingleOrDefault(x => x.Id == id);
+        }
+
+        public int AddStudent(string name, bool succeded)
+        {
+            Student newStudent = new Student { Id = _allStudents.Count() , Name = name, Succeeded = succeded };
+            _allStudents = _allStudents.Append(newStudent).ToList();
+            return newStudent.Id;
+        }
+
+        public void PutStudent(int id, string name, bool succeded)
+        {
+            _allStudents[id] = new Student { Id = id, Name = name, Succeeded= succeded };
+        }
+
+        public void DeleteStudent(int id)
+        {
+            _allStudents.Remove(GetStudentById(id));
+        }
+
+        public Student GetRandom(int random)
+        {
+            int max = _allStudents.Count < random
+                ? _allStudents.Count
+                : random;
+            Random? rand = new System.Random();
+            return _allStudents[rand.Next(0,max)];
         }
     }
 }

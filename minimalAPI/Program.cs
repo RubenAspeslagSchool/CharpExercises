@@ -64,16 +64,6 @@ namespace minimalAPI
                 return student is Student foundStudent
                     ? Results.Ok(foundStudent)
                     : Results.NotFound($"student with ID {id} not fount");
-
-
-               
-                //if (foundStudent is Student)
-                //{
-                //    return Results.Ok(foundStudent);
-                //} else
-                //{
-                //    return Results.NotFound($"student with ID {id} not fount");
-                //}
             });
 
             app.Run();
