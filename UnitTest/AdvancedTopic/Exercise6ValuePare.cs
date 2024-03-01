@@ -12,7 +12,11 @@ namespace UnitTest.AdvancedTopic
     public class Exercise6ValuePare
     {
         
-        [Fact]
+        [Fact]   
+        // welke methode test je
+        // beschrijving
+        // welk resultaat verwacht je
+
         public void TestAdd()
         {
             //Arrange
@@ -20,14 +24,14 @@ namespace UnitTest.AdvancedTopic
 
 
             //Act
-           // exercise6ValuePare.Add("ik ben Ruben", "soy Ruben");
+            exercise6ValuePare.Add("ik ben Ruben", "soy Ruben");
 
             //assert
-            //Assert.Single(exercise6ValuePare.Values);
-            //Assert.Single(exercise6ValuePare.Keys);
-            //Assert.Equal(1, exercise6ValuePare.Count);
-            //Assert.Equal("ik ben Ruben", exercise6ValuePare.Values[0]);
-            //Assert.Equal("soy Ruben", exercise6ValuePare.Keys[0]);
+            Assert.Single(exercise6ValuePare.Values);
+            Assert.Single(exercise6ValuePare.Keys);
+            Assert.Equal(1, exercise6ValuePare.Count);
+            Assert.Equal("ik ben Ruben", exercise6ValuePare.Values[0]);
+            Assert.Equal("soy Ruben", exercise6ValuePare.Keys[0]);
             Assert.True(true);
         }
 
@@ -43,9 +47,9 @@ namespace UnitTest.AdvancedTopic
             exercise6ValuePare.Clear();
 
             //assert
-            //Assert.Empty(exercise6ValuePare.Values);
-            //Assert.Empty(exercise6ValuePare.Keys);
-            //Assert.Equal(0, exercise6ValuePare.Count);
+            Assert.Empty(exercise6ValuePare.Values);
+            Assert.Empty(exercise6ValuePare.Keys);
+            Assert.Equal(0, exercise6ValuePare.Count);
             Assert.True(true);
         }
 
@@ -60,11 +64,11 @@ namespace UnitTest.AdvancedTopic
             exercise6ValuePare.Remove("ik ben Ruben");
 
             //assert
-            //Assert.Single(exercise6ValuePare.Values);
-            //Assert.Single(exercise6ValuePare.Keys);
-            //Assert.Equal(1, exercise6ValuePare.Count);
-            //Assert.Equal("apel", exercise6ValuePare.Values[0]);
-            //Assert.Equal("manzana", exercise6ValuePare.Keys[0]);
+            Assert.Single(exercise6ValuePare.Values);
+            Assert.Single(exercise6ValuePare.Keys);
+            Assert.Equal(1, exercise6ValuePare.Count);
+            Assert.Equal("apel", exercise6ValuePare.Values[0]);
+            Assert.Equal("manzana", exercise6ValuePare.Keys[0]);
             Assert.True(true);
         }
     }

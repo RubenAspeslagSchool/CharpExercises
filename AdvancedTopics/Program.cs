@@ -6,7 +6,10 @@
         {
 
             
-            Exercise1Yield.Run();
+            //Exercise1Yield.Run();
+
+           (_, string statment) =  new Exercise4PaternMaching().Run(Console.ReadLine());
+            Console.WriteLine(statment);
         }
 
        

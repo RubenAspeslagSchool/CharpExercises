@@ -1,0 +1,6 @@
+@minimalAPI_HostAddress = http://localhost:5022
+
+GET {{minimalAPI_HostAddress}}/students/
+Accept: application/json
+
+###
