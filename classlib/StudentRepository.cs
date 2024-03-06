@@ -39,9 +39,9 @@ namespace ClassLib
             _allStudents[id] = new Student { Id = id, Name = name, Succeeded= succeded };
         }
 
-        public void DeleteStudent(int id)
+        public bool DeleteStudent(int id)
         {
-            _allStudents.Remove(GetStudentById(id));
+           return _allStudents.Remove(GetStudentById(id));
         }
 
         public Student GetRandom(int random)

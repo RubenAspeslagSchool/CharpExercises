@@ -2,16 +2,13 @@
 
 namespace MinimalAPI.Routes
 {
-    public class StudentRoutes
+    public static class StudentRoutes
     {
-        public StudentRepository studentRepository { get; init; }
-        public StudentRoutes()
+        
+       
+        public static void AddStudentRoutes(this RouteGroupBuilder studentsGroup)
         {
-            studentRepository = new StudentRepository();
-        }
-        public void AddRoutes(RouteGroupBuilder studentsGroup)
-        {
-
+            StudentRepository studentRepository = new StudentRepository();
 
             studentsGroup.MapGet("/", () =>
             {

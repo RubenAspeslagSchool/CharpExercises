@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using MinimalAPI.Routes;
+using ClassLib;
+using MinimalAPI.Extention;
 
-WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
+ (WebApplicationBuilder builder,IServiceCollection services, ConfigurationManager conf) = WebApplication.CreateBuilder(args);
+string apiPrefix = conf["ApiPrefix"] ?? "/api";
+//WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -21,11 +25,10 @@ app.UseHttpsRedirection();
 
 
 
-RouteGroupBuilder studentsGroup = app.MapGroup("/students")
-                .WithTags("Students");
+ app.MapGroup($"{apiPrefix}/students")
+                .WithTags("Students")
+                .AddStudentRoutes();
 
-StudentRoutes studentRoutes = new StudentRoutes();
-studentRoutes.AddRoutes(studentsGroup);
 
 app.Run();
 
