@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MinimalAPI.Routes;
 using ClassLib;
-using MinimalAPI.Extention;
 
  (WebApplicationBuilder builder,IServiceCollection services, ConfigurationManager conf) = WebApplication.CreateBuilder(args);
 string apiPrefix = conf["ApiPrefix"] ?? "/api";

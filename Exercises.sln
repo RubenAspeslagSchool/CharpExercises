@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MinimalAPI", "MinimalAPI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI", "MinimalAPI\MinimalAPI\MinimalAPI.csproj", "{44CE02F3-B341-4ADB-8237-00E5C8D079E3}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shaired", "Shaired\Shaired.shproj", "{34B8441B-8195-485B-88C4-FBB55A8CEF95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shaired2", "Shaired2\Shaired2.csproj", "{490BAE6B-44B1-4814-9AC4-6A41ADE6A0A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +87,10 @@ Global
 		{44CE02F3-B341-4ADB-8237-00E5C8D079E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44CE02F3-B341-4ADB-8237-00E5C8D079E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44CE02F3-B341-4ADB-8237-00E5C8D079E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490BAE6B-44B1-4814-9AC4-6A41ADE6A0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490BAE6B-44B1-4814-9AC4-6A41ADE6A0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490BAE6B-44B1-4814-9AC4-6A41ADE6A0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490BAE6B-44B1-4814-9AC4-6A41ADE6A0A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,11 +107,14 @@ Global
 		{2E6511E5-C426-4531-9A6F-4D80CAA86663} = {CEE12FFD-9D06-49C8-8867-073ED6513432}
 		{CEE12FFD-9D06-49C8-8867-073ED6513432} = {74C17647-CF35-41AA-8292-173D0B6F1F0B}
 		{44CE02F3-B341-4ADB-8237-00E5C8D079E3} = {CEE12FFD-9D06-49C8-8867-073ED6513432}
+		{34B8441B-8195-485B-88C4-FBB55A8CEF95} = {CEE12FFD-9D06-49C8-8867-073ED6513432}
+		{490BAE6B-44B1-4814-9AC4-6A41ADE6A0A8} = {CEE12FFD-9D06-49C8-8867-073ED6513432}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0266D55-C1EF-47BB-917E-E6633BA94282}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shaired\Shaired.projitems*{34b8441b-8195-485b-88c4-fbb55a8cef95}*SharedItemsImports = 13
 		Snipits\Snipits.projitems*{aad7da09-13d8-44b5-9a3c-2fdbb6f1cae1}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
