@@ -18,19 +18,15 @@ namespace AdvancedTopics
         // If the input is a boolean than show a random true/false statement (for example: 67 is an even  number).
        // Tip: use a Tuple definition for storing these statements.
 
-        public  (bool result, string statment) Run(string inputTXT) 
+        public (bool result, string statment) Run(string inputTXT) 
         {
-
             return inputTXT switch
             {
                 string input when int.TryParse(input, out int number) => IsOdd(number),
                 string input when bool.TryParse(input, out bool isTrue) => getStatment(isTrue),
                 string input => IsPalingdrome(input),
                 _ => (false, $"not a reconized type ")
-            };
-
-            
-           
+            };  
         }
 
         private (bool result,string statment) getStatment(bool input)
@@ -50,7 +46,6 @@ namespace AdvancedTopics
             return (input.Reverse() == input)
                 ? (true, $"{input} is a palingdrome")
                 : (false, $"{input} is not a palingdrome");
-
         }
     }
 }

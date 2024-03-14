@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassLib
 {
-    public class StudentRepository
+    public class StudentRepository : IStudentRepository
     {
         private List<Student> _allStudents;
 
 
-        public StudentRepository() 
+        public StudentRepository()
         {
             _allStudents = new List<Student>()
             {
                 new Student {Id = 0, Name ="Mieke", Succeeded = true},
                 new Student { Id = 1, Name = "Ruben", Succeeded = true }
             };
-            
+
         }
         public IEnumerable<Student> GetAllStudents()
         {
@@ -29,19 +29,19 @@ namespace ClassLib
 
         public int AddStudent(string name, bool succeded)
         {
-            Student newStudent = new Student { Id = _allStudents.Count() , Name = name, Succeeded = succeded };
+            Student newStudent = new Student { Id = _allStudents.Count(), Name = name, Succeeded = succeded };
             _allStudents = _allStudents.Append(newStudent).ToList();
             return newStudent.Id;
         }
 
         public void PutStudent(int id, string name, bool succeded)
         {
-            _allStudents[id] = new Student { Id = id, Name = name, Succeeded= succeded };
+            _allStudents[id] = new Student { Id = id, Name = name, Succeeded = succeded };
         }
 
         public bool DeleteStudent(int id)
         {
-           return _allStudents.Remove(GetStudentById(id));
+            return _allStudents.Remove(GetStudentById(id));
         }
 
         public Student GetRandom(int random)
@@ -50,7 +50,7 @@ namespace ClassLib
                 ? _allStudents.Count
                 : random;
             Random? rand = new System.Random();
-            return _allStudents[rand.Next(0,max)];
+            return _allStudents[rand.Next(0, max)];
         }
     }
 }
