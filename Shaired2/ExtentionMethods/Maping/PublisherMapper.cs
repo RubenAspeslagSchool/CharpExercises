@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLib.Models;
 
-namespace Shaired2.ExtentionMethods
+namespace Shaired2.ExtentionMethods.Maping
 {
-    public static class Mapper
+    public static class PublisherMapper
     {
-        public static PublicherReadDTO ToReadDTO(this Publisher publisher) 
+     
+        public static PublicherReadDTO ToReadDTO(this Publisher publisher)
         {
-            return new PublicherReadDTO() 
+            return new PublicherReadDTO()
             {
                 Id = publisher.Id,
                 Name = publisher.Name,
-                Description = publisher.Description 
+                Description = publisher.Description
             };
         }
 
@@ -31,8 +32,29 @@ namespace Shaired2.ExtentionMethods
                 Name = publisher.Name,
                 Description = publisher.Description,
                 books = new List<Book>()
-               
+
             };
+        }
+
+        public static List<PublicherReadDTO> ToReadDTOs(this List<Publisher> publishers)
+        {
+            List<PublicherReadDTO> list = new List<PublicherReadDTO>();
+            publishers.ForEach(publisher =>
+            {
+                list.Add(publisher.ToReadDTO());
+            });
+            return list;
+        }
+
+
+        public static List<Publisher> ToClasses(this List<PublicherReadDTO> publishers)
+        {
+            List<Publisher> list = new List<Publisher>();
+            publishers.ForEach(publisher =>
+            {
+                list.Add(publisher.ToClass());
+            });
+            return list;
         }
     }
 }

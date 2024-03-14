@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shaired2.ExtentionMethods.Maping;
+using Shaired2.DTOs;
 
 namespace webApi.Controllers
 {
@@ -12,21 +14,21 @@ namespace webApi.Controllers
             PublisherReposetory = new PublisherReposetory();
         }
         [HttpGet(Name = "GetPublishers")]
-        public List<Publisher> GetPublishers()
+        public List<PublicherReadDTO> GetPublishers()
         {
-            return PublisherReposetory.GetPublishers();
+            return PublisherReposetory.GetPublishers().ToReadDTOs();
         }
         
         [HttpGet("{id:int}", Name = "GetPublisherById")] 
-        public Publisher GetPublisher(int id)
+        public PublicherReadDTO GetPublisher(int id)
         {
-            return PublisherReposetory.GetPublisherstById(id);
+            return PublisherReposetory.GetPublisherstById(id).ToReadDTO();
         }
 
         [HttpGet("{id:int}/books", Name = "GetBooksByPublisherId")] 
-        public List<Book> GetPublisherBooksByPublisherId(int id,[FromQuery] string? category)
+        public List<BoookReadDTO> GetPublisherBooksByPublisherId(int id,[FromQuery] string? category)
         {
-            return PublisherReposetory.GetBooksOfPublisher(id, category);
+            return PublisherReposetory.GetBooksOfPublisher(id, category).ToReadDTOs();
         }
 
     }

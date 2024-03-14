@@ -32,5 +32,15 @@ namespace Shaired2.ExtentionMethods.Maping
                 Category = book.Category,
             };
         }
+
+        public static List<BoookReadDTO> ToReadDTOs(this List<Book> books) 
+        {
+            List<BoookReadDTO> list = new List<BoookReadDTO>();
+            books.ForEach(book =>
+            { 
+                list.Add(ToReadDTO(book));
+            });
+            return list;
+        }
     }
 }
