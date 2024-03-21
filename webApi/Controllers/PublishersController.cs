@@ -2,6 +2,10 @@
 using Shaired2.ExtentionMethods.Maping;
 using Shaired2.DTOs;
 using ClassLib.Reposetorys;
+using webApi.Wrappers;
+using Shaired2.ExtentionMethods.paging;
+using Shaired2.Filter;
+using AutoMapper;
 
 namespace webApi.Controllers
 {
@@ -9,28 +13,40 @@ namespace webApi.Controllers
     [Route("api/[controller]")]
     public class PublishersController : ControllerBase
     {
-        private PublisherReposetory PublisherReposetory { get; init; }
+        private readonly IMapper _mapper;
+        private PublisherReposetory _publisherReposetory;
        public PublishersController() 
         {
-            PublisherReposetory = new PublisherReposetory();
+            _publisherReposetory = new PublisherReposetory();
         }
 
         [HttpGet(Name = "GetPublishers")]
-        public List<PublicherReadDTO> GetPublishers()
+        public ActionResult<PagedResponse<List<PublicherReadDTO>>> GetPublishers([FromQuery] PaginationFilter paginationFilter, [FromServices] IConfiguration config)
         {
-            return PublisherReposetory.GetPublishers().ToReadDTOs();
+            List<Publisher> allPublishers = _publisherReposetory.GetPublishers();
+            return Ok(new PagedResponse<IEnumerable<PublicherReadDTO>>(
+                       allPublishers
+                           .ToPagedList(paginationFilter.PageNumber, paginationFilter.PageSize)
+                           .ProjectTo<PublicherReadDTO>(_mapper.ConfigurationProvider)
+                           .ToList(),
+                       paginationFilter.PageNumber,
+                       paginationFilter.PageSize)
+            {
+                TotalRecords = allPublishers.Count()
+            });
+
         }
-        
+
         [HttpGet("{id:int}", Name = "GetPublisherById")] 
         public PublicherReadDTO GetPublisher(int id)
         {
-            return PublisherReposetory.GetPublisherstById(id).ToReadDTO();
+            return _publisherReposetory.GetPublisherstById(id).ToReadDTO();
         }
 
         [HttpGet("{id:int}/books", Name = "GetBooksByPublisherId")] 
         public List<BoookReadDTO> GetPublisherBooksByPublisherId(int id,[FromQuery] string? category)
         {
-            return PublisherReposetory.GetBooksOfPublisher(id, category).ToReadDTOs();
+            return _publisherReposetory.GetBooksOfPublisher(id, category).ToReadDTOs();
         }
 
         [HttpPost]
@@ -42,7 +58,7 @@ namespace webApi.Controllers
             }
 
             return CreatedAtAction(nameof(GetPublisher),
-                PublisherReposetory.AddPublisher(publisher.ToPublisherEntity())
+                _publisherReposetory.AddPublisher(publisher.ToPublisherEntity())
                 .ToReadDTO());
         }
 
@@ -54,14 +70,14 @@ namespace webApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            PublisherReposetory.UpdatePublisher(id, publisher.ToPublisherEntity());
+            _publisherReposetory.UpdatePublisher(id, publisher.ToPublisherEntity());
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteAuthor(int id)
         {
-            bool deleted = PublisherReposetory.DeletePublisher(id);
+            bool deleted = _publisherReposetory.DeletePublisher(id);
             if (!deleted)
             {
                 return NotFound();
