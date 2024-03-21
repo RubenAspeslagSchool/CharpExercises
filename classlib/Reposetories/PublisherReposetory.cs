@@ -33,7 +33,7 @@ namespace ClassLib.Reposetorys
 
         public Publisher AddPublisher(Publisher publisher)
         {
-            
+
             _Publishers.Add(publisher);
             return publisher;
         }

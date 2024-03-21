@@ -14,7 +14,7 @@ namespace webApi.Controllers
     public class PublishersController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private PublisherReposetory _publisherReposetory;
+        private IPublisherReposetory _publisherReposetory;
        public PublishersController() 
         {
             _publisherReposetory = new PublisherReposetory();
