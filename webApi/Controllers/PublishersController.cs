@@ -27,7 +27,7 @@ namespace webApi.Controllers
             return Ok(new PagedResponse<IEnumerable<PublicherReadDTO>>(
                        allPublishers
                            .ToPagedList(paginationFilter.PageNumber, paginationFilter.PageSize)
-                           .ProjectTo<PublicherReadDTO>(_mapper.ConfigurationProvider)
+                           .ToReadDTOs()
                            .ToList(),
                        paginationFilter.PageNumber,
                        paginationFilter.PageSize)

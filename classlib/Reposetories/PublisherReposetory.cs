@@ -50,7 +50,7 @@ namespace ClassLib.Reposetorys
 
         public bool DeletePublisher(int id)
         {
-            Publisher authorToRemove = _Publishers.FirstOrDefault(x => x.Id == id);
+            Publisher authorToRemove = GetPublisherstById(id);
             if (authorToRemove != null)
             {
                 _Publishers.Remove(authorToRemove);

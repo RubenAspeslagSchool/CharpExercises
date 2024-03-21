@@ -14,7 +14,7 @@ namespace Shaired2.ExtentionMethods.paging
             return books.Where(p => p.City == Citty).ToList();
         }
 
-        public static List<Publisher> ToPagedList<T>(this List<Publisher> entities, int pageNumber, int pageSize)
+        public static List<Publisher> ToPagedList(this List<Publisher> entities, int pageNumber, int pageSize)
         {
             return entities
                         .Skip((pageNumber - 1) * pageSize)
