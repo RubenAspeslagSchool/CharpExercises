@@ -52,7 +52,7 @@ namespace webApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<int> AddAuthor(PublisherWriteDTO publisher)
+        public ActionResult<PublicherReadDTO> AddAuthor(PublisherWriteDTO publisher)
         {
             if (!ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace webApi.Controllers
                 .ToReadDTO());
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}", Name = "EditPublicher")]
         public IActionResult UpdatePublisher(int id, PublisherWriteDTO publisher)
         {
             if (!ModelState.IsValid)
@@ -76,7 +76,7 @@ namespace webApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name ="DeletePublisher")]
         public IActionResult DeleteAuthor(int id)
         {
             bool deleted = _publisherReposetory.DeletePublisher(id);
