@@ -19,12 +19,13 @@ namespace Shaired2.ExtentionMethods.Maping
             {
                 Id = publisher.Id,
                 Name = publisher.Name,
-                Description = publisher.Description
+                Description = publisher.Description,
+                City = publisher.City
             };
         }
 
 
-        public static Publisher ToClass(this PublicherReadDTO publisher)
+        public static Publisher ToPublisherEntety(this PublicherReadDTO publisher)
         {
             return new Publisher()
             {
@@ -47,14 +48,26 @@ namespace Shaired2.ExtentionMethods.Maping
         }
 
 
-        public static List<Publisher> ToClasses(this List<PublicherReadDTO> publishers)
+        public static List<Publisher> ToPublisherEntetys(this List<PublicherReadDTO> publishers)
         {
             List<Publisher> list = new List<Publisher>();
             publishers.ForEach(publisher =>
             {
-                list.Add(publisher.ToClass());
+                list.Add(publisher.ToPublisherEntety());
             });
             return list;
         }
+
+      
+
+        public static Publisher ToPublisherEntity(this PublisherWriteDTO author)
+        {
+            return new Publisher()
+            {
+                Name = author.Name,
+                City = author.City
+            };
+        }
+
     }
 }

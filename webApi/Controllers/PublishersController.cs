@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shaired2.ExtentionMethods.Maping;
 using Shaired2.DTOs;
+using ClassLib.Reposetorys;
 
 namespace webApi.Controllers
 {
@@ -13,6 +14,7 @@ namespace webApi.Controllers
         {
             PublisherReposetory = new PublisherReposetory();
         }
+
         [HttpGet(Name = "GetPublishers")]
         public List<PublicherReadDTO> GetPublishers()
         {
@@ -30,6 +32,44 @@ namespace webApi.Controllers
         {
             return PublisherReposetory.GetBooksOfPublisher(id, category).ToReadDTOs();
         }
+
+        [HttpPost]
+        public ActionResult<int> AddAuthor(PublisherWriteDTO publisher)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return CreatedAtAction(nameof(GetPublisher),
+                PublisherReposetory.AddPublisher(publisher.ToPublisherEntity())
+                .ToReadDTO());
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdatePublisher(int id, PublisherWriteDTO publisher)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            PublisherReposetory.UpdatePublisher(id, publisher.ToPublisherEntity());
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteAuthor(int id)
+        {
+            bool deleted = PublisherReposetory.DeletePublisher(id);
+            if (!deleted)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
+
+
 
     }
 }

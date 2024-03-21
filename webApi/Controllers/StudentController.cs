@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClassLib.Reposetorys;
+using Microsoft.AspNetCore.Mvc;
 
 namespace webApi.Controllers
 {

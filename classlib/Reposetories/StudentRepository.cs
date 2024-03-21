@@ -1,7 +1,7 @@
 ﻿using ClassLib.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClassLib
+namespace ClassLib.Reposetorys
 {
     public class StudentRepository : IStudentRepository
     {
@@ -49,7 +49,7 @@ namespace ClassLib
             int max = _allStudents.Count < random
                 ? _allStudents.Count
                 : random;
-            Random? rand = new System.Random();
+            Random? rand = new Random();
             return _allStudents[rand.Next(0, max)];
         }
     }

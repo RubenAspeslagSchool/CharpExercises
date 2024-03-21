@@ -1,6 +1,6 @@
 ﻿using ClassLib.Models;
 
-namespace ClassLib
+namespace ClassLib.Reposetorys
 {
     public interface IStudentRepository
     {

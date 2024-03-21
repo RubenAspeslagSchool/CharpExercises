@@ -12,5 +12,6 @@ namespace ClassLib.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Book> books { get; set; }
+        public string City { get; set; }
     }
 }

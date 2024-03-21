@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shaired2.DTOs
 {
-    public record PublicherReadDTO
+    public record PublisherWriteDTO
     {
-        public int Id { get; init; }
         public string Name { get; init; }
-        public string Description { get; init; }
         public string City { get; init; }
     }
 }
