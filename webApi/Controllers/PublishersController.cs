@@ -9,8 +9,10 @@ using AutoMapper;
 
 namespace webApi.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [Route("api/[controller]")]
     public class PublishersController : ControllerBase
     {
         private readonly IMapper _mapper;
