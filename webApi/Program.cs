@@ -1,3 +1,6 @@
+using ClassLib.Reposetorys;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+// dependency injection
+builder.Services.AddScoped<IPublisherReposetory, PublisherReposetory>();
+
+// fluent validation
+builder.Services.AddFluentValidationAutoValidation();
+
 
 var app = builder.Build();
 
