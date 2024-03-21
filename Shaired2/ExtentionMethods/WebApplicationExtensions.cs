@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-namespace Shaired2.ExtentionMethods
+namespace Shaired.ExtentionMethods
 {
     public static class WebApplicationExtensions
     {

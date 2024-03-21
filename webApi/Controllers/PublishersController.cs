@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Shaired2.ExtentionMethods.Maping;
-using Shaired2.DTOs;
+using Shaired.ExtentionMethods.Maping;
+using Shaired.DTOs;
 using ClassLib.Reposetorys;
 using webApi.Wrappers;
-using Shaired2.ExtentionMethods.paging;
-using Shaired2.Filter;
+using Shaired.ExtentionMethods.paging;
+using Shaired.Filter;
 using AutoMapper;
 
 namespace webApi.Controllers

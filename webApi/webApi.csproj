@@ -23,14 +23,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\classlib\ClassLib.csproj" />
-    <ProjectReference Include="..\Shaired2\Shaired2.csproj" />
+    <ProjectReference Include="..\Shaired2\Shaired.csproj" />
   </ItemGroup>
 
 
 	<ItemGroup>
 		<Using Include="ClassLib" />
 		<Using Include="ClassLib.Models" />
-		<Using Include="Shaired2" />
-		<Using Include="Shaired2.ExtentionMethods" />
+		<Using Include="Shaired" />
+		<Using Include="Shaired.ExtentionMethods" />
 	</ItemGroup>
 </Project>

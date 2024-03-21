@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Shaired2.DTOs;
+using Shaired.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLib.Models;
 
-namespace Shaired2.ExtentionMethods.Maping
+namespace Shaired.ExtentionMethods.Maping
 {
     public static class PublisherMapper
     {

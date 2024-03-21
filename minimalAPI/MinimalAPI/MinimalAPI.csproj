@@ -21,7 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\classlib\ClassLib.csproj" />
     <ProjectReference Include="..\..\ExtentionMethods\ExtentionMethods.csproj" />
-    <ProjectReference Include="..\..\Shaired2\Shaired2.csproj" />
+    <ProjectReference Include="..\..\Shaired2\Shaired.csproj" />
   </ItemGroup>
 
 

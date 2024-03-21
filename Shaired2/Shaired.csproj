@@ -29,7 +29,8 @@
 	<ItemGroup>
 		<Using Include="AutoMapper" />
 		<Using Include="ClassLib.Models" />
-		<Using Include="Shaired2.DTOs" />
+		<Using Include="Shaired.DTOs" />
+		
 	</ItemGroup>
 	
 </Project>

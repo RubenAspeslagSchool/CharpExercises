@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Shaired2.DTOs;
+using Shaired.DTOs;
 using ClassLib.Models;
 
-namespace Shaired2.ExtentionMethods.Mapping
+namespace Shaired.ExtentionMethods.Mapping
 {
     public static class Automapper
     {

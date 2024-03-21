@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shaired2.ExtentionMethods.paging
+namespace Shaired.ExtentionMethods.paging
 {
     public static class Paging
     {

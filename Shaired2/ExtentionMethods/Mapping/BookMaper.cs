@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLib.Models;
-using Shaired2.DTOs;
+using Shaired.DTOs;
 
-namespace Shaired2.ExtentionMethods.Maping
+namespace Shaired.ExtentionMethods.Maping
 {
     public static class BookMaper
     {

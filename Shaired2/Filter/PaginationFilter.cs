@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shaired2.Filter
+namespace Shaired.Filter
 {
     public class PaginationFilter
     {
