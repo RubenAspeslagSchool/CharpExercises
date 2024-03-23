@@ -52,16 +52,16 @@ namespace webApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<PublicherReadDTO> AddAuthor(PublisherWriteDTO publisher)
+        public ActionResult AddPublisher(PublisherWriteDTO publisher)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+
             return CreatedAtAction(nameof(GetPublisher),
-                _publisherReposetory.AddPublisher(publisher.ToPublisherEntity())
-                .ToReadDTO());
+                 _publisherReposetory.AddPublisher(publisher.ToPublisherEntity()).ToReadDTO());
         }
 
         [HttpPut("{id}", Name = "EditPublicher")]

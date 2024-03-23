@@ -12,7 +12,26 @@ namespace ClassLib.Reposetorys
         private List<Publisher> _Publishers;
         public PublisherReposetory()
         {
-            _Publishers = new List<Publisher>();
+            _Publishers = new List<Publisher>()
+            {
+                new Publisher() 
+                {
+                 Id = 0,
+                 Name = "Ruben", 
+                 City = "Brugge", 
+                 books = new List<Book>() 
+                    { 
+                     new Book() { 
+                         Id = 1, 
+                         Title = "The unsolvable .net error"
+                     },
+                     new Book() {
+                         Id = 2,
+                         Title = "The horor of python"
+                     },
+                    }
+                }
+            };
         }
 
         public List<Publisher> GetPublishers() { return _Publishers; }
@@ -33,9 +52,10 @@ namespace ClassLib.Reposetorys
 
         public Publisher AddPublisher(Publisher publisher)
         {
-
+            publisher.Id = _Publishers.Count;
             _Publishers.Add(publisher);
-            return publisher;
+            
+           return publisher;
         }
 
         public void UpdatePublisher(int id, Publisher author)
